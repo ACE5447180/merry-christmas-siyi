@@ -933,6 +933,212 @@ main {
   color: var(--gold-light);
 }
 
+.particle-tree {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0 66px;
+  background:
+    radial-gradient(circle at 50% 52%, rgba(195, 157, 87, .1), transparent 28%),
+    radial-gradient(circle at 12% 18%, rgba(50, 91, 69, .12), transparent 24%),
+    linear-gradient(to bottom, #071512, #0a1b15 48%, #06120f);
+}
+
+.particle-tree::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .2;
+  background-image:
+    radial-gradient(rgba(232, 213, 174, .5) .4px, transparent .6px),
+    radial-gradient(rgba(0, 0, 0, .7) .4px, transparent .6px);
+  background-position: 0 0, 6px 8px;
+  background-size: 13px 13px, 15px 15px;
+  mix-blend-mode: soft-light;
+}
+
+.particle-tree > .chapter {
+  position: relative;
+  z-index: 2;
+  margin: 0 23px;
+  color: rgba(233, 218, 192, .29);
+  border-color: rgba(233, 218, 192, .14);
+}
+
+.tree-heading {
+  position: relative;
+  z-index: 2;
+  padding: 34px 23px 12px;
+}
+
+.tree-heading .section-kicker {
+  margin: 0 0 17px;
+  color: var(--gold);
+}
+
+.tree-heading h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(37px, 10.8vw, 54px);
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -.065em;
+}
+
+.tree-heading h2 em {
+  color: var(--gold-light);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.tree-canvas-shell {
+  position: relative;
+  z-index: 1;
+  height: clamp(430px, 125vw, 540px);
+  margin-top: 3px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 67%, rgba(183, 139, 72, .08), transparent 36%),
+    linear-gradient(to bottom, rgba(4, 14, 10, 0), rgba(4, 13, 9, .24));
+}
+
+.tree-canvas-shell::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 22px;
+  left: 22px;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, rgba(230, 210, 172, .17), transparent);
+}
+
+.tree-canvas-shell::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(7, 21, 18, .36), transparent 12%, transparent 84%, rgba(6, 18, 15, .42)),
+    radial-gradient(circle at 50% 52%, transparent 31%, rgba(3, 10, 8, .2) 70%);
+}
+
+.tree-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: pan-y;
+}
+
+.tree-canvas-label {
+  position: absolute;
+  z-index: 4;
+  top: 18px;
+  right: 22px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  pointer-events: none;
+  color: rgba(238, 222, 195, .32);
+  font-family: var(--caption);
+  font-size: 5px;
+  letter-spacing: .16em;
+}
+
+.tree-canvas-label i {
+  flex: 1;
+  height: 1px;
+  background: rgba(222, 201, 160, .11);
+}
+
+.tree-canvas-hint {
+  position: absolute;
+  z-index: 4;
+  right: 22px;
+  bottom: 13px;
+  left: 22px;
+  margin: 0;
+  pointer-events: none;
+  color: rgba(239, 226, 205, .28);
+  font-family: var(--serif);
+  font-size: 8px;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+.tree-action {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 4px 23px 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(233, 218, 192, .11);
+}
+
+.tree-action p {
+  max-width: 190px;
+  margin: 0;
+  color: rgba(239, 226, 205, .42);
+  font-family: var(--serif);
+  font-size: 9px;
+  line-height: 1.75;
+  letter-spacing: .03em;
+  transition: color .3s ease;
+}
+
+.tree-action p.is-glowing {
+  color: var(--gold-light);
+}
+
+.tree-pulse {
+  flex: 0 0 auto;
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 0 15px;
+  cursor: pointer;
+  color: var(--gold-light);
+  border: 1px solid rgba(217, 186, 120, .34);
+  border-radius: 999px;
+  background: rgba(217, 186, 120, .045);
+  font-family: var(--serif);
+  font-size: 10px;
+  letter-spacing: .07em;
+  transition: color .25s ease, background .25s ease, transform .2s ease, box-shadow .25s ease;
+  touch-action: manipulation;
+}
+
+.tree-pulse span {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border: 1px solid rgba(241, 217, 162, .22);
+  border-radius: 50%;
+  font-size: 8px;
+}
+
+.tree-pulse:active {
+  transform: scale(.965);
+}
+
+.tree-pulse.is-pulsing {
+  color: var(--night);
+  background: var(--gold-light);
+  box-shadow: 0 0 26px rgba(217, 186, 120, .26);
+}
+
 .letter-section {
   padding: 76px 23px 66px;
   overflow: hidden;
@@ -1633,10 +1839,40 @@ main {
   .countdown,
   .prologue,
   .wishes,
+  .particle-tree,
   .letter-section,
   .finale {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .particle-tree {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .particle-tree > .chapter,
+  .tree-heading,
+  .tree-action {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .tree-heading {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tree-action {
+    gap: 10px;
+  }
+
+  .tree-action p {
+    max-width: 155px;
+  }
+
+  .tree-pulse {
+    padding: 0 12px;
   }
 
   .gallery > .chapter,

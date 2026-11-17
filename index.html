@@ -7,10 +7,10 @@
   <meta name="theme-color" content="#071512">
   <meta name="color-scheme" content="dark">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="description" content="小冯写给小怡的一部圣诞电影，以及一场实时的冬日倒计时。">
+  <meta name="description" content="小冯写给小怡的一部圣诞电影、一场实时倒计时和一棵由动态粒子组成的圣诞树。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="小怡，圣诞快乐">
-  <meta property="og:description" content="今年的雪，想和你一起看。">
+  <meta property="og:description" content="今年的雪，想和你一起看。还有一棵只为你亮的粒子圣诞树。">
   <meta property="og:url" content="https://ace5447180.github.io/merry-christmas-siyi/">
   <meta property="og:image" content="https://ace5447180.github.io/merry-christmas-siyi/assets/hero-night.jpg">
   <meta property="og:image:alt" content="小怡的圣诞电影网页">
@@ -261,6 +261,43 @@
         <p class="wish-feedback" id="wishFeedback" aria-live="polite">
           点一点，让你的圣诞愿望亮起来。
         </p>
+      </div>
+    </section>
+
+    <section class="particle-tree" id="particleTreeSection" aria-labelledby="particleTreeTitle">
+      <div class="chapter reveal">
+        <span>04 / MADE OF LIGHT</span>
+        <span>LIVE PARTICLES</span>
+      </div>
+
+      <div class="tree-heading reveal reveal-delay-1">
+        <p class="section-kicker">A TREE MADE OF LITTLE WISHES</p>
+        <h2 id="particleTreeTitle">把每一颗<br>想你的心，<br><em>挂成一棵树。</em></h2>
+      </div>
+
+      <div class="tree-canvas-shell reveal reveal-delay-2">
+        <canvas
+          class="tree-canvas"
+          id="particleTreeCanvas"
+          role="img"
+          aria-label="由金色、米白色和莓红色动态粒子组成的圣诞树"
+        >
+          一棵由动态星光粒子组成的圣诞树。
+        </canvas>
+        <div class="tree-canvas-label" aria-hidden="true">
+          <span>LIVE / PARTICLES</span>
+          <i></i>
+          <span>FOR XIAOYI</span>
+        </div>
+        <p class="tree-canvas-hint" aria-hidden="true">轻触按钮，让星光更亮一点</p>
+      </div>
+
+      <div class="tree-action reveal reveal-delay-3">
+        <p id="treeMessage" aria-live="polite">每个粒子，都是想靠近你一点的心情。</p>
+        <button class="tree-pulse" id="treePulseBtn" type="button">
+          点亮这棵树
+          <span aria-hidden="true">✦</span>
+        </button>
       </div>
     </section>
 
